@@ -11,15 +11,16 @@ function createMenuItem(name, price, type) {
 }
 
 function addIngredients(ingredientName, ingredientsArray) {
-  if (ingredientsArray.indexOf(ingredientName) === -1)
+  if (ingredientsArray.includes(ingredientName)) {
+    return ingredientsArray;
+  }
+
   return ingredientsArray.push(ingredientName);
 }
 
 function formatPrice(initialPrice) {
-  
+  return `$${initialPrice}`;
 }
-
-
 
 module.exports = {
   nameMenuItem,
