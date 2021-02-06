@@ -13,13 +13,25 @@ function createMenuItem(name, price, type) {
 function addIngredients(ingredientName, ingredientsArray) {
   if (ingredientsArray.includes(ingredientName)) {
     return ingredientsArray;
+  } else {
+    return ingredientsArray.push(ingredientName);
   }
-
-  return ingredientsArray.push(ingredientName);
 }
 
 function formatPrice(initialPrice) {
   return `$${initialPrice}`;
+}
+
+function decreasePrice(initialPrice) {
+  return initialPrice - (initialPrice * 0.1);
+}
+
+function createRecipe(title, ingredients, type) {
+  return {
+    title:title,
+    ingredients:ingredients,
+    type:type,
+  }
 }
 
 module.exports = {
@@ -27,6 +39,6 @@ module.exports = {
   createMenuItem,
   addIngredients,
   formatPrice,
-  // decreasePrice,
-  // createRecipe
+  decreasePrice,
+  createRecipe
 }
