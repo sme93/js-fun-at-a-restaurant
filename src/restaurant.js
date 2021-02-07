@@ -23,9 +23,19 @@ function addMenuItem(restaurantObject, menuObject) {
   }
 }
 
-function removeMenuItem() {
+function removeMenuItem(restaurantObject, nameToRemove, menuType) {
+  // var isOnMenu = restaurantObject.menus.[menuType].some(function(meal) {
+  //   return
+  // })
+
+
+  restaurantObject.menus[menuType] = [];
+  return `No one is eating our ${nameToRemove} - it has been removed from the ${menuType} menu!`
 
 }
+
+
+
   //console.log(menuType);
   //console.log(restaurantObject);
   //console.log(menuObject.type);
