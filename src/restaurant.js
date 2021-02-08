@@ -24,15 +24,20 @@ function addMenuItem(restaurantObject, menuObject) {
 }
 
 function removeMenuItem(restaurantObject, nameToRemove, menuType) {
-  // var isOnMenu = restaurantObject.menus.[menuType].some(function(meal) {
-  //   return
-  // })
+  var isOnMenu = restaurantObject.menus[menuType].some(function(meal) {
+      return meal.name === nameToRemove;
+  })
 
+  if (isOnMenu === true) {
+    restaurantObject.menus[menuType] = [];
+    return `No one is eating our ${nameToRemove} - it has been removed from the ${menuType} menu!`
+  }
 
-  restaurantObject.menus[menuType] = [];
-  return `No one is eating our ${nameToRemove} - it has been removed from the ${menuType} menu!`
-
+  if (isOnMenu === false) {
+    return `Sorry, we don't sell ${nameToRemove}, try adding a new recipe!`
+  }
 }
+
 
 
 
