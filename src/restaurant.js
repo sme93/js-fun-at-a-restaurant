@@ -28,12 +28,12 @@ function removeMenuItem(restaurantObject, nameToRemove, menuType) {
       return meal.name === nameToRemove;
   })
 
-  if (isOnMenu === true) {
+  if (isOnMenu) {
     restaurantObject.menus[menuType] = [];
     return `No one is eating our ${nameToRemove} - it has been removed from the ${menuType} menu!`
   }
 
-  if (isOnMenu === false) {
+  if (isOnMenu) {
     return `Sorry, we don't sell ${nameToRemove}, try adding a new recipe!`
   }
 }
